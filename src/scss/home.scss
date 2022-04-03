@@ -1,0 +1,934 @@
+//  Hero page ====================================================================================================
+
+.hero {
+    background-color: $mainColor;
+    color: $whiteColor;
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: rem(130) rem(10);
+        padding-left: rem(10);
+        padding-right: rem(10);
+        @include adaptiveValue("padding-top", 130, 65, 968, 320, 1);
+        @include adaptiveValue("padding-bottom", 130, 65, 968, 320, 1);
+
+        @media (max-width:$tablet){
+            flex-direction: column;
+        }
+    }
+
+    &__info {
+        max-width: rem(575);
+
+        @media (max-width:$tablet){
+            
+        }
+    }
+
+    &__title {
+        font-size: rem(38);
+        @include adaptiveValue("font-size", 38, 28, 968, 320, 1);
+        line-height: math.div(27, 20);
+        margin-bottom: rem(12);
+
+        span {
+            color: $primaryColor;
+        }
+    }
+
+    &__text {
+        font-size: rem(18);
+        line-height: math.div(27, 20);
+        margin-bottom: rem(30);
+    }
+
+    &__form {
+        display: flex;
+        margin-bottom: rem(15);
+    }
+
+    &__input {
+        background-color: $whiteColor;
+        max-width: rem(365);
+        width: 100%;
+        padding: rem(10) rem(25);
+        margin-right: rem(15);
+        border-radius: rem(6);
+    }
+
+    &__search {
+        background-color: transparent;
+        width: 100%;
+        
+        &:focus {
+            outline: none
+        }
+
+        &::placeholder {
+            color: #1E313B;
+        }
+    }
+
+    &__btn {
+        padding: rem(10) rem(15);
+        background-color: #F6F6F6;
+        box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.05);
+        border-radius: rem(6);
+        transition: $mainTrs;
+
+        @media (any-hover: hover){
+            &:hover{
+                background-color: #b8b6b6;
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__subtext {
+        font-size: rem(12);
+        line-height: math.div(18, 12);
+
+        a {
+            color: $primaryColor;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__bg {
+        display: block;
+        img {
+            width: 100%;
+        }
+    }
+}
+
+//========================================================================================================================================================
+
+.company {
+    background-color: $mainColor;
+
+    &__container {
+        @include adaptiveValue("padding-bottom", 100, 65, 968, 320, 1);
+    }
+
+    &__subtitle {
+        color: $whiteColor;
+        text-align: center;
+        font-size: rem(18);
+
+        &:not(:last-child) {
+            margin-bottom: rem(35);
+        }
+    }
+
+    &__items {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        row-gap: rem(20);
+    }
+
+
+    &__item {
+    }
+
+    &__link {
+    }
+}
+
+//========================================================================================================================================================
+
+.features {
+    @include adaptiveValue("padding-top", 130, 65, 968, 320, 1);
+    @include adaptiveValue("padding-bottom", 130, 65, 968, 320, 1);
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @media (max-width:$tablet){
+            flex-direction: column-reverse;
+            row-gap: rem(30);
+        }
+    }
+
+    &__images img {
+        display: block;
+        max-width: rem(600);
+        width: 100%;
+    }
+
+    &__info {
+        max-width: rem(590)
+    }
+
+    &__tag {
+        @extend %tags;
+        border: 2px solid $orangeColor;
+        background-color: rgba($orangeColor, 0.6);
+        &:not(:last-child) {
+            margin-bottom: rem(30);
+        }
+    }
+
+    &__title {
+        @extend %title;
+
+        span {
+            color: $orangeColor;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: rem(17);
+        }
+    }
+
+    &__text {
+        line-height: math.div(24, 16);
+
+        &:not(:last-child) {
+            margin-bottom: rem(17);
+        }
+    }
+
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(rem(280), 1fr));
+        @include adaptiveValue("row-gap", 45, 30, 968, 320, 1);
+    }
+
+    &__item {
+        display: flex;
+    }
+}
+.item-features {
+
+    &__pictures {
+    }
+
+    &__info {
+        margin-left: rem(15);
+    }
+
+    &__title {
+        font-size: rem(18);
+        line-height: math.div(24, 18);
+        color: $orangeColor;
+
+        &:not(:last-child) {
+            margin-bottom: rem(12);
+        }
+    }
+
+    &__text {
+        font-size: rem(14);
+        line-height: math.div(21, 14);
+    }
+}
+
+//========================================================================================================================================================
+
+.stats {
+    @include adaptiveValue("padding-top", 130, 65, 968, 320, 1);
+    @include adaptiveValue("padding-bottom", 130, 65, 968, 320, 1);
+    background-color: #F6F6F6;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+
+        @media (max-width:$tablet){
+            flex-direction: column;
+        }
+    }
+
+    &__main {
+        max-width: rem(610);
+
+        @media (max-width:$tablet){
+            max-width: 100%;
+        }
+    }
+
+    &__tag {
+        @extend %tags;
+        border: 2px solid $greanColor;
+        background-color: rgba($greanColor, 0.6);
+        &:not(:last-child) {
+            margin-bottom: rem(30);
+        }
+    }
+
+    &__title {
+        @extend %title;
+
+        span {
+            color: $greanColor;
+        }
+
+        @media (max-width:$tablet){
+            margin-bottom: rem(35);
+        }
+    }
+
+    &__info {
+        max-width: rem(600);
+        padding-left:rem(10);
+
+        @media (max-width:$tablet){
+            max-width: 100%;
+        }
+    }
+
+    &__text {
+        font-size: rem(18);
+        line-height: math.div(27, 18);
+
+        &:not(:last-child) {
+            margin-bottom: rem(35);
+        }
+    }
+
+    &__items {
+        display: flex;
+        justify-content: space-between;
+
+        @media (max-width:$tablet){
+            justify-content: space-evenly;
+        }
+    }
+
+    &__item {
+        max-width: rem(200)
+    }
+
+    &__percent {
+        @include adaptiveValue("font-size", 48, 38, 768, 320, 1);
+        line-height: math.div(57, 48);
+        color: $greanColor;
+    }
+
+    &__parhg {
+        line-height: math.div(24, 16);
+    }
+}
+
+//========================================================================================================================================================
+
+.team {
+    @include adaptiveValue("padding-top", 130, 65, 968, 320, 1);
+    @include adaptiveValue("padding-bottom", 130, 65, 968, 320, 1);
+
+    &__container {
+        display: flex;
+        align-items: center;
+
+        @media (max-width: 1275px){
+            flex-direction: column;
+            row-gap: rem(35);
+        }
+    }
+
+    &__info {
+        max-width: rem(575);
+
+        &:not(:last-child) {
+            margin-right: rem(80);
+        }
+
+        @media (max-width:$mobile){
+            max-width: 100%;
+
+            &:not(:last-child) {
+                margin-right: 0;
+            }
+        }
+    }
+
+    &__tag {
+        @extend %tags;
+        border: 2px solid $primaryColor;
+        background-color: rgba($primaryColor, 0.6);
+        color: $whiteColor !important;
+        &:not(:last-child) {
+            margin-bottom: rem(30);
+        }
+    }
+
+    &__title {
+        @extend %title;
+        &:not(:last-child) {
+            margin-bottom: rem(20);
+        }
+
+        span {
+            color: $primaryColor;
+        }
+    }
+
+    &__text {
+        font-size: rem(18);
+        line-height: math.div(27, 18);
+        &:not(:last-child) {
+            margin-bottom: rem(30);
+        }
+    }
+
+    &__button {
+        padding: rem(10) rem(15);
+        background-color: $primaryColor;
+        color: $whiteColor;
+        border-radius: rem(6);
+        text-align: center;
+        transition: $mainTrs;
+
+        @media (any-hover: hover){
+            &:hover{
+                background-color: #583ab1;
+            }
+        }
+    }
+
+    &__persons {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 675px;
+        align-items: center;
+        justify-content: center;
+        gap: rem(15);
+
+        @media (max-width: 1275px){
+            flex-direction: row;
+            height: 100%;
+        }
+    }
+
+    &__img {
+        border-radius: rem(16);
+        overflow:hidden;
+        max-width: rem(288);
+        height: rem(288);
+        object-fit: contain;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+//========================================================================================================================================================
+
+.buy {
+    @include adaptiveValue("padding-top", 130, 65, 968, 320, 1);
+    @include adaptiveValue("padding-bottom", 130, 65, 968, 320, 1);
+    background-color: $mainColor;
+
+    &__container {
+        text-align: center;
+        
+    }
+
+    &__img {
+        &:not(:last-child) {
+            margin-bottom: rem(15);
+        }
+    }
+
+    &__title {
+        color: $whiteColor;
+        font-size: rem(32);
+        line-height: math.div(35, 32);
+        &:not(:last-child) {
+            margin-bottom: rem(15);
+        }
+    }
+
+    &__text {
+        color: $whiteColor;
+        font-size: rem(18);
+        line-height: math.div(27, 18);
+        &:not(:last-child) {
+            margin-bottom: rem(30);
+        }
+    }
+}
+.btn-buy {
+
+    &__btn {
+        padding: rem(10) rem(15);
+        box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.05);
+        border-radius: rem(6);
+
+        &--primary {
+            background-color: $primaryColor;
+            color: $whiteColor;
+            transition: $mainTrs;
+
+            &:not(:last-child) {
+                margin-right: rem(15);
+            }
+
+            @media (any-hover: hover){
+                &:hover{
+                    background-color: #583ab1;
+                }
+            }
+        }
+    
+        &--ghost {
+            background-color: $whiteColor;
+            transition: $mainTrs;
+
+            @media (any-hover: hover){
+                &:hover{
+                    background-color: #d0d0d0;
+                }
+            }
+        }
+    }
+}
+
+//========================================================================================================================================================
+
+.process {
+    @include adaptiveValue("padding-top", 130, 65, 968, 320, 1);
+    @include adaptiveValue("padding-bottom", 130, 65, 968, 320, 1);
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @media (max-width:$tablet){
+            flex-direction: column;
+            row-gap: rem(40);
+        }
+    }
+
+    &__info {
+        max-width: rem(600);
+    }
+
+    &__tag {
+        @extend %tags;
+        border: 2px solid $orangeColor;
+        background-color: rgba($orangeColor, 0.6);
+        color: $whiteColor !important;
+        &:not(:last-child) {
+            margin-bottom: rem(30);
+        }
+    }
+
+    &__title {
+        @extend %title;
+        &:not(:last-child) {
+            margin-bottom: rem(50);
+        }
+    }
+
+    &__btn {
+        background-color: $mainColor;
+        padding: rem(10) rem(15);
+        border-radius: rem(6);
+        color: $whiteColor;
+        transition: $mainTrs;
+
+        @media (any-hover: hover){
+            &:hover{
+                background-color: $orangeColor;
+            }
+        }
+    }
+
+    &__algorithm {
+        max-width: rem(600);
+        position: relative;
+
+        &::before {
+            position: absolute;
+            content: '';
+            top: rem(70);
+            left: rem(30);
+            width: rem(2);
+            height: rem(315);
+            background-color: rgba(0, 0, 0, 0.15);
+            z-index: 1;
+
+            @media (max-width:420px){
+                height: rem(365);
+            }
+        }
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        
+
+        &:not(:last-child) {
+            // margin-bottom: rem(75);
+            @include adaptiveValue("margin-bottom", 75, 35, 475, 320, 1);
+        }
+
+        img {
+            z-index: 2;
+        }
+    }
+
+    &__about {
+        // margin-left: rem(40);
+        @include adaptiveValue("margin-left", 40, 25, 475, 320, 1);
+    }
+
+    &__name {
+        font-size: rem(18);
+        line-height: math.div(24,18);
+
+        &:not(:last-child) {
+            margin-bottom: rem(10);
+        }
+    }
+
+    &__pargh {
+        line-height: math.div(24,16);
+    }
+}
+
+//========================================================================================================================================================
+
+.about {
+    background-color: #F6F6F6;
+    @include adaptiveValue("padding-top", 130, 65, 968, 320, 1);
+    @include adaptiveValue("padding-bottom", 130, 65, 968, 320, 1);
+
+    &__container {
+        text-align: center;
+    }
+
+    &__slide {
+        max-width: rem(725);
+        margin: 0 auto;
+    }
+
+    &__title {
+        margin-top: rem(40);
+        margin-bottom: rem(30);
+        font-size: rem(24);
+        line-height: math.div(33, 24);
+    }
+
+    &__name {
+        margin-top: rem(15);
+    }
+
+    &__position {
+        margin-top: rem(10);
+    }
+}
+
+//========================================================================================================================================================
+
+.callback {
+    @include adaptiveValue("padding-top", 65, 45, 475, 320, 1);
+    @include adaptiveValue("padding-bottom", 65, 45, 475, 320, 1);
+    background-color: $primaryColor;
+
+    &__container {
+    }
+
+    &__body {
+        background-color: #fff;
+        // padding: rem(95);
+        padding-top: rem(95);
+        padding-bottom: rem(95);
+        @include adaptiveValue("padding-left", 95, 25, 768, 320, 1);
+        @include adaptiveValue("padding-right", 95, 25, 768, 320, 1);
+        border-radius: rem(48);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @media (max-width:$tablet){
+            flex-direction: column;
+            row-gap: rem(30);
+        }
+    }
+
+    &__info {
+        max-width: rem(540)
+    }
+
+    &__title {
+        font-size: rem(32);
+        line-height: math.div(35, 32);
+
+        &:not(:last-child) {
+            margin-bottom: rem(10);
+        }
+    }
+
+    &__text {
+        line-height: math.div(24, 16);
+    }
+
+    &__right {
+        max-width: rem(470)
+    }
+
+    &__form {
+        display: flex;
+        &:not(:last-child) {
+            margin-bottom: rem(15);
+        }
+    }
+
+    &__input {
+        max-width: rem(360);
+        width: 100%;
+        padding: rem(10) rem(20);
+        border: 1px solid #000000;
+        border-radius: rem(6);
+
+        input {
+            background-color: transparent;
+            width: 100%;
+
+            &:focus {
+                outline: none;
+            }
+
+            &::placeholder {
+                color: $textColor;
+                line-height: math.div(24, 16);
+            }
+
+        }
+    }
+
+    &__submit {
+        margin-left: rem(15);
+        background-color: $mainColor;
+        border-radius: rem(6);
+        color: $whiteColor;
+        padding: rem(10);
+        transition: $mainTrs;
+
+        @media (any-hover: hover){
+            &:hover{
+                background-color: $primaryColor;
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__terms {
+        font-size: rem(12);
+        line-height: math.div(18, 12);
+
+        a {
+            color: $primaryColor;
+
+            @media (any-hover: hover){
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+//========================================================================================================================================================
+
+.blog {
+    @include adaptiveValue("padding-top", 130, 65, 968, 320, 1);
+    @include adaptiveValue("padding-bottom", 130, 65, 968, 320, 1);
+
+    &__container {
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+
+        &:not(:last-child) {
+            margin-bottom: rem(30);
+        }
+
+        @media (max-width:$mobile){
+            flex-direction: column;
+            row-gap: rem(10);
+            align-items: center;
+        }
+    }
+
+    &__body {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(rem(300), 1fr));
+        justify-items: center;
+        row-gap: rem(30);
+        column-gap: rem(15);
+
+        @media (max-width:$mobile){
+            // grid-template-columns: repeat(auto-fit, minmax(rem(300), 1fr));
+            justify-content: start;
+        }
+    }
+}
+.blog-header {
+
+    &__info {
+    }
+
+    &__tag {
+        @extend %tags;
+        border: 2px solid $primaryColor;
+        background-color: rgba($primaryColor, 0.6);
+        color: $whiteColor !important;
+        &:not(:last-child) {
+            margin-bottom: rem(30);
+        }
+    }
+
+    &__title {
+        @extend %title;
+        &:not(:last-child) {
+            margin-bottom: rem(20);
+        }
+
+        span {
+            color: $primaryColor;
+        }
+    }
+
+    &__text {
+        font-size: rem(18);
+        line-height: math.div(27, 18);
+    }
+
+    &__btn {
+        margin-left: rem(15);
+        background-color: $mainColor;
+        border-radius: rem(6);
+        color: $whiteColor;
+        padding: rem(10);
+        transition: $mainTrs;
+
+        @media (any-hover: hover){
+            &:hover{
+                background-color: $primaryColor;
+                cursor: pointer;
+            }
+        }
+    }
+}
+.body-blog {
+
+    &__item {
+    }
+
+    &__img {
+        width: 100%;
+        object-fit: cover;
+        border-radius: rem(16);
+    }
+
+    &__title {
+        margin: rem(40) 0px rem(10);
+        font-size: rem(24);
+        line-height: math.div(33, 24);
+    }
+
+    &__text {
+        &:not(:last-child) {margin-bottom: rem(15);}
+    }
+
+    &__user {
+        display: flex;
+        align-items: end;
+    }
+
+    &__info {
+        margin: 0px rem(20);
+    }
+
+    &__name {
+        font-size: rem(14);
+        line-height: math.div(21, 14);
+        
+    }
+
+    &__date {
+        font-size: rem(14);
+        line-height: math.div(21, 14);
+    }
+
+    &__time {
+        font-size: rem(14);
+        line-height: math.div(21, 14);
+    }
+}
+
+//========================================================================================================================================================
+
+.ready {
+    @include adaptiveValue("padding-top", 85, 65, 968, 320, 1);
+    @include adaptiveValue("padding-bottom", 85, 65, 968, 320, 1);
+    background-color: $primaryColor;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @media (max-width:$tablet){
+            flex-direction: column;
+            row-gap: rem(30);
+        }
+    }
+
+    &__info {
+        @media (max-width:$tablet){
+            text-align: center;
+        }
+    }
+
+    &__title {
+        @include adaptiveValue("font-size", 56, 36, 968, 320, 1);
+        line-height: math.div(61, 56);
+        color: $whiteColor;
+        margin-bottom: rem(15);
+    }
+
+    &__text {
+        font-size: rem(18);
+        line-height: math.div(27, 18);
+        color: $whiteColor;
+    }
+
+    &__btn {
+        padding: rem(15) rem(20);
+        box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.05);
+        border-radius: rem(6);
+        background-color: $whiteColor;
+        display: block;
+        transition: $mainTrs;
+
+            @media (any-hover: hover){
+                &:hover{
+                    background-color: #d0d0d0;
+                }
+            }
+    }
+}
